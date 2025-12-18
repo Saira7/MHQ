@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/MHG-FINAL-LOGO-finaal-and-last.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -18,11 +19,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <nav className="sticky top-0 w-full z-50 bg-black/90 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
-        <NavLink to="/" className="text-2xl font-bold text-blue-900" onClick={scrollToTop}>
-          MHQ UK Consultants
-        </NavLink>
+        <NavLink
+  to="/"
+  className="flex items-center gap-2"
+  onClick={scrollToTop}
+>
+  <img
+    src={logo}
+    alt="MHQ UK Consultants Logo"
+    className="h-10 w-auto"
+  />
+  <span className="text-lg font-bold text-blue-900 relative top-2.5">
+  UK Consultants
+  </span>
+</NavLink>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 items-center">
