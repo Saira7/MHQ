@@ -1,59 +1,102 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ShieldCheck, Briefcase, Headphones } from "lucide-react";
 
-const stats = [
-  { number: "250+", label: "SUBSCRIBERS TRUST US" },
-  { number: "60+", label: "PRODUCTS HIGH-QUALITY" },
-  { number: "5+", label: "EXPERIENCE YEARS" },
+const features = [
+  {
+    icon: ShieldCheck,
+    title: "Trusted & Secure",
+    desc: "Industry-standard compliance and security practices to protect your business at every step."
+  },
+  {
+    icon: Briefcase,
+    title: "Proven Expertise",
+    desc: "Deep knowledge of the UK payment landscape with solutions tailored to your business goals."
+  },
+  {
+    icon: Headphones,
+    title: "Dedicated Support",
+    desc: "Hands-on guidance and long-term support focused on your growth and success."
+  }
 ];
 
-const TestimonialsStats = () => {
-  return (
-   <section
-  className=" p-10 rounded-2xl md:px-16 mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-cover bg-center relative"
-  style={{ backgroundImage: "url('/assets/wave-bg-infosection3.jpg')" }}
->
-      {/* Left side text */}
-      <div className="md:w-1/2">
-        <div className="flex items-center mb-4">
-          <motion.span
-              className="w-2 h-2 rounded-full bg-blue-700 mr-2"
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            />
-          <p className="uppercase text-xs text-gray-500 tracking-widest font-semibold">
-            Achievements at a Glance
-          </p>
-        </div>
-        <h2 className="text-4xl font-extrabold text-gray-900 leading-tight mb-4">
-          Our Edge <br /> in Excellence
-        </h2>
-        <p className="text-gray-600 max-w-md">
-          With decades of industry experience, a diverse range of products, and a dedicated team, we are committed to delivering exceptional quality chemicals.
-        </p>
-        {/* <hr className="border-gray-300 mt-6" /> */}
-      </div>
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
 
-      {/* Right side stats */}
-      <div className="md:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-6 justify-center">
-        {stats.map((item, idx) => (
-          <motion.div
-            key={idx}
-            className="relative bg-blue-900 text-white rounded-md shadow-lg p-8 w-40 h-40 flex flex-col justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: idx * 0.2 }}
-          >
-            {/* Blue 3D side */}
-            <div className="absolute top-0 right-0 w-6 h-full bg-blue-600 rounded-tr-md rounded-br-md shadow-inner"></div>
-            <p className="text-xs uppercase tracking-widest mb-1 opacity-70">{item.label}</p>
-            <h3 className="text-4xl font-bold">{item.number}</h3>
-          </motion.div>
-        ))}
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+const WhyChooseUs = () => {
+  return (
+    <section className="py-24 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <p className="uppercase text-xs tracking-widest text-blue-900 font-semibold mb-4">
+            Why Choose MHQ UK
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            Built on Trust.<br />Driven by Expertise.
+          </h2>
+
+          <p className="mt-6 text-gray-600 text-lg">
+            We partner with businesses to deliver secure, reliable, and results-focused
+            payment consulting solutions across the UK.
+          </p>
+        </motion.div>
+
+        {/* Cards */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {features.map((item, idx) => (
+            <motion.div
+              key={idx}
+              variants={cardVariants}
+              className="group rounded-2xl border border-gray-200 p-10 transition-all duration-300 hover:border-blue-900 hover:shadow-xl"
+            >
+              <div className="mb-6 flex items-center justify-center w-14 h-14 rounded-xl bg-blue-900/5 group-hover:bg-blue-900 transition-colors duration-300">
+                <item.icon className="w-7 h-7 text-blue-900 group-hover:text-white transition-colors duration-300" />
+              </div>
+
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
       </div>
     </section>
   );
 };
 
-export default TestimonialsStats;
+export default WhyChooseUs;
