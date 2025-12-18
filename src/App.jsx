@@ -4,7 +4,7 @@ import Footer from "./components/common/Footer";
 import Home from "./pages/Home";
 import ServicesPage from "./pages/Services";
 import About from "./pages/About";
-import TestimonialsPage from "./pages/Testimonialspage";
+import TestimonialsPage from "./pages/TestimonialsPage";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
 import QuotePage from "./pages/QuotePage";

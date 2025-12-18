@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 w-full z-50 bg-black/90 backdrop-blur-md shadow-sm">
+    <nav className="sticky top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
         <NavLink
   to="/"
@@ -29,10 +29,10 @@ const Navbar = () => {
   <img
     src={logo}
     alt="MHQ UK Consultants Logo"
-    className="h-10 w-auto"
+    className="h-12 w-auto"
   />
-  <span className="text-lg font-bold text-blue-900 relative top-2.5">
-  UK Consultants
+  <span className="text-lg font-bold text-blue-900 relative top-3.5">
+  <span className="text-black">UK</span> Consultants
   </span>
 </NavLink>
 
