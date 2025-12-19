@@ -5,8 +5,21 @@ import MapSection from "../components/contact/MapSection";
 import FAQSection from "../components/contact/FaqSection";
 import ContactCTA from "../components/contact/ContactCTA";
 import { motion } from "framer-motion";
+import BookAppointment from "../components/contact/BookAppointment";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ContactPage = () => {
+   const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToBookAppointment) {
+      const el = document.getElementById("book-appointment");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -78,6 +91,10 @@ const ContactPage = () => {
 
       {/* Map Section */}
       <MapSection />
+      <section id="book-appointment">
+  <BookAppointment />
+</section>
+
 
       {/* FAQ Section */}
       <FAQSection />

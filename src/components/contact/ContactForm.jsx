@@ -18,7 +18,7 @@ const ContactForm = () => {
     });
 
     // Send the data as JSON to Formspree
-    const response = await fetch("https://formspree.io/f/mdkqwrbn", {
+    const response = await fetch("https://formspree.io/f/xnjaqeyg", {
       method: "POST",
       body: JSON.stringify(data),  // Send data as JSON
       headers: {
@@ -39,6 +39,7 @@ const ContactForm = () => {
   return (
     <motion.form
       onSubmit={handleSubmit}  // Attach handleSubmit to form submit
+      id="contact-form"
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ServiceCard = ({ title, desc, img, tag }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 flex flex-col overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 flex flex-col overflow-hidden relative">
       
       {/* Optional Tag */}
       {tag && (
@@ -27,12 +27,24 @@ const ServiceCard = ({ title, desc, img, tag }) => {
           {title}
         </h3>
         <p className="text-gray-600 flex-1 mb-5 leading-relaxed">{desc}</p>
-        <Link
-          to={`/services/${title.toLowerCase().replace(/ /g, "-")}`}
-          className="mt-auto text-blue-900 font-medium hover:underline hover:text-blue-700 transition-colors duration-200"
-        >
-          Learn More →
-        </Link>
+
+        {/* Buttons */}
+        <div className="flex items-center gap-4 mt-auto">
+          <Link
+  to="/contact"
+  state={{ scrollToBookAppointment: true }}
+  className="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition font-medium"
+>
+  Book Now
+</Link>
+
+          <Link
+            to={`/services/${title.toLowerCase().replace(/ /g, "-")}`}
+            className="text-blue-900 font-medium hover:underline hover:text-blue-700 transition-colors duration-200"
+          >
+            Learn More →
+          </Link>
+        </div>
       </div>
     </div>
   );

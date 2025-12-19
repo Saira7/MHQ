@@ -142,10 +142,15 @@ const ServicesPage = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           {services.map((service, index) => (
-            <motion.div key={index} variants={cardVariants}>
-              <ServiceCard {...service} />
-            </motion.div>
-          ))}
+  <motion.div
+    key={index}
+    variants={cardVariants}
+    id={service.title.replace(/\s+/g, "-").toLowerCase()} // <-- add this
+  >
+    <ServiceCard {...service} />
+  </motion.div>
+))}
+
         </motion.div>
       </section>
 
