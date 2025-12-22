@@ -3,15 +3,22 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react"; // optional arrow icon for the button
 
 const ContactCTA = () => {
+  // Replace with your WhatsApp number including country code (no + or spaces)
+  const whatsappNumber = "447900000000"; // example: UK number
+  const preFilledMessage = encodeURIComponent(
+    "Hello! I would like to get a free consultation regarding my business."
+  );
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${preFilledMessage}`;
+
   return (
     <motion.section
-      className=" m-5 relative py-20 px-6 md:px-20 bg-gradient-to-tr from-blue-900 via-black to-blue-900 text-white rounded-3xl overflow-hidden shadow-lg mb-5"
+      className="m-5 relative py-20 px-6 md:px-20 bg-gradient-to-tr from-blue-900 via-black to-blue-900 text-white rounded-3xl overflow-hidden shadow-lg mb-5"
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      {/* Optional decorative circles */}
+      {/* Decorative circles */}
       <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -23,7 +30,9 @@ const ContactCTA = () => {
           Contact MHQ UK Consultants today for expert guidance and a tailored strategy.
         </p>
         <a
-          href="/quote"
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-900 font-semibold rounded-full text-lg hover:scale-105 hover:shadow-xl transition transform"
         >
           Get a Free Consultation <ArrowRight size={20} />

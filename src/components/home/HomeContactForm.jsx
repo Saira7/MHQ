@@ -97,13 +97,13 @@ const HomeContactCTA = () => {
         {/* Bottom Feature Badges */}
         <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm mt-10">
           <div className="flex items-center gap-2 text-lg font-semibold">
-            <span>⚡</span> Fast Response Team
+            <span></span> Fast Response Team
           </div>
           <div className="flex items-center gap-2 text-lg font-semibold">
-            <span>🔒</span> Secure & Confidential
+            <span></span> Secure & Confidential
           </div>
           <div className="flex items-center gap-2 text-lg font-semibold">
-            <span>⭐</span> Trusted by 500+ Clients
+            <span></span> Trusted by 500+ Clients
           </div>
         </div>
       </motion.div>

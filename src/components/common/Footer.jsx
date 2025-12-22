@@ -120,7 +120,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="relative border-t border-blue-700 mt-10 pt-6 text-center text-gray-300 text-sm">
+      <div className="relative border-t border-blue-700 pt-3 text-center text-gray-300 text-sm my-3">
         &copy; {new Date().getFullYear()} MHQUK. All rights reserved.
       </div>
     </footer>
