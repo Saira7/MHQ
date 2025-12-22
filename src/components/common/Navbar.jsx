@@ -1,22 +1,24 @@
 import React, { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/MHG-FINAL-LOGO-finaal-and-last.png";
 
 const services = [
-  { title: "Company Formation", desc: "...", img: "/assets/company-formations.webp" },
-  { title: "Business Consultancy", desc: "...", img: "/assets/consultancy.webp" },
-  { title: "UK Compliance & Regulations", desc: "...", img: "/assets/complaince.jpg" },
-  { title: "Accounting & Tax Services", desc: "...", img: "/assets/accountand tax.webp" },
-  { title: "Business Funding Assistance", desc: "...", img: "/assets/funding.jpg" },
-  { title: "Digital Presence & Branding", desc: "...", img: "/assets/branding.jpg" },
-  { title: "HR & Workforce Support", desc: "...", img: "/assets/hr.png" },
-  { title: "Document Preparation", desc: "...", img: "/assets/document.avif" },
+  { title: "Company Formation" },
+  { title: "Business Consultancy" },
+  { title: "UK Compliance & Regulations" },
+  { title: "Accounting & Tax Services" },
+  { title: "Business Funding Assistance" },
+  { title: "Digital Presence & Branding" },
+  { title: "HR & Workforce Support" },
+  { title: "Document Preparation" },
+  { title: "Virtual Office Address" },
+  { title: "Business Bank Account Assistance" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const location = useLocation();
+  const navigate = useNavigate();
 
   const linkClasses = ({ isActive }) =>
     `font-medium px-2 py-1 border-b-2 ${
@@ -27,16 +29,25 @@ const Navbar = () => {
 
   const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
-  const handleServiceClick = (id) => {
-    setOpen(false);
-    setServicesOpen(false);
-    if (location.pathname === "/services") {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = `/services#${id}`;
+  const scrollToCard = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+ const handleServiceClick = (id) => {
+  setOpen(false);
+  setServicesOpen(false);
+
+  if (window.location.pathname !== "/services") {
+    navigate(`/services#${id}`);
+  } else {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
 
   return (
     <nav className="sticky top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
@@ -68,8 +79,8 @@ const Navbar = () => {
 
             {/* Dropdown */}
             <ul className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-lg w-64 border border-gray-200 z-50 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto transition-all duration-200">
-              {services.map((service, i) => (
-                <li key={i}>
+              {services.map((service) => (
+                <li key={service.title}>
                   <button
                     className="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors duration-200 cursor-pointer"
                     onClick={() => handleServiceClick(service.title.replace(/\s+/g, "-").toLowerCase())}
@@ -121,8 +132,8 @@ const Navbar = () => {
             </button>
             {servicesOpen && (
               <ul className="flex flex-col bg-white border-t border-gray-200 mt-1">
-                {services.map((service, i) => (
-                  <li key={i}>
+                {services.map((service) => (
+                  <li key={service.title}>
                     <button
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors duration-200 cursor-pointer"
                       onClick={() => handleServiceClick(service.title.replace(/\s+/g, "-").toLowerCase())}
