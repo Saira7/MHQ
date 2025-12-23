@@ -107,11 +107,11 @@ const JoinOurTeam = () => {
           <option value="" disabled>
             Select Position*
           </option>
-          <option value="Frontend Developer">Frontend Developer</option>
-          <option value="Backend Developer">Backend Developer</option>
-          <option value="Full Stack Developer">Full Stack Developer</option>
-          <option value="UI/UX Designer">UI/UX Designer</option>
           <option value="Marketing Specialist">Marketing Specialist</option>
+          <option value="Marketing Advisor">Marketing Advisor</option>
+          <option value="Supervisor">Supervisor</option>
+          <option value="Field Agent">Field Agent</option>
+          <option value="Receptionist">Receptionist</option>
           <option value="Other">Other</option>
         </motion.select>
 

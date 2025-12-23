@@ -24,13 +24,13 @@ const JobCards = () => {
           <motion.div
             variants={{
               hover: {
-                backgroundColor: "#1e40af", // blue-800
+                backgroundColor: "#172554", // blue-800
                 x: 8,
                 y: 8,
               },
             }}
             transition={{ type: "spring", stiffness: 200, damping: 18 }}
-            className="absolute inset-0 translate-x-4 translate-y-4 bg-blue-950/90 rounded-3xl z-0"
+            className="absolute inset-0 translate-x-4 translate-y-4 bg-blue-900 rounded-3xl z-0"
           />
 
           {/* Front glass card */}
@@ -43,8 +43,8 @@ const JobCards = () => {
             }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
             className="relative z-10 rounded-3xl p-8 border border-white/40 
-                       bg-gradient-to-br from-white/90 via-blue-50/70 to-blue-50/50
-                       hover:from-blue-100/90 hover:via-blue-200/70 hover:to-blue-100/70
+                       bg-gradient-to-br from-white/90 via-white/90 to-white/90
+                       hover:from-blue-50/70 hover:via-blue-50/70 hover:to-blue-50/70
                        backdrop-blur-xl shadow-xl hover:shadow-2xl
                        transition-colors duration-500"
           >
@@ -59,14 +59,14 @@ const JobCards = () => {
             </h3>
 
             {/* Description */}
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+            <p className="text-gray-600 text-sm font-semibold leading-relaxed mb-6">
               Join our growing team and work in a dynamic, professional
               environment with growth opportunities.
             </p>
 
             {/* Action */}
             <button className="px-6 py-2 bg-blue-900 text-white rounded-full text-sm font-semibold 
-                               hover:bg-blue-700 hover:scale-105 transition-all duration-300">
+                               hover:bg-blue-950 hover:scale-105 transition-all duration-300">
               APPLY NOW
             </button>
           </motion.div>
