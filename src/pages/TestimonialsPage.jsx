@@ -80,29 +80,7 @@ const TestimonialsPage = () => {
         <SubmitTestimonialForm />
       </motion.section>
 
-      {/* Trusted Logos */}
-      <motion.section
-        className="mt-24 border-t border-gray-200 pt-12"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <p className="text-center text-gray-500 text-sm mb-6">
-          Trusted by companies worldwide
-        </p>
-        <motion.div
-          className="flex flex-wrap justify-center gap-10 opacity-70 text-gray-600 text-3xl"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, staggerChildren: 0.2 }}
-        >
-          <FaGoogle title="Google" />
-          <FaStripe title="Stripe" />
-          <FaSlack title="Slack" />
-          <FaMicrosoft title="Microsoft" />
-          <FaAirbnb title="Airbnb" />
-        </motion.div>
-      </motion.section>
+     
     </main>
   );
 };

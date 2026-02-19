@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
+// Centralized location data - EXPORTED for use in MapSection
+export const officeLocation = {
+  address: "2/2 62 Kingarth Street, Glasgow, Scotland, G42 7RW",
+  mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.384891237692!2d-4.267974923512252!3d55.86440898067487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488846d7a6f3b9f7%3A0x9b8a6e8c9f3d2e1b!2s62%20Kingarth%20St%2C%20Glasgow%20G42%207RW%2C%20UK!5e0!3m2!1sen!2s!4v1699000000000!5m2!1sen!2s",
+  mapsSearchUrl: "https://www.google.com/maps/search/?api=1&query=2/2+62+Kingarth+Street,+Glasgow,+Scotland,+G42+7RW"
+};
+
 const infoItems = [
   { 
     title: "Email", 
@@ -24,9 +31,9 @@ const infoItems = [
   },
   { 
     title: "Address", 
-    value: "London, UK", 
+    value: officeLocation.address, 
     icon: <MapPin size={22} />,
-    link: null
+    link: officeLocation.mapsSearchUrl
   },
 ];
 
@@ -62,7 +69,9 @@ const ContactInfo = () => {
               `}
             >
               <div className={`p-3 rounded-full shadow-sm ${
-                idx === 2 ? 'bg-blue-100 text-blue-900' : 'bg-blue-100 text-blue-900'
+                idx === 2 ? 'bg-blue-100 text-blue-900' : 
+                idx === 3 ? 'bg-blue-100 text-blue-900' : 
+                'bg-blue-100 text-blue-900'
               }`}>
                 {item.icon}
               </div>
@@ -81,8 +90,8 @@ const ContactInfo = () => {
             <a 
               key={idx}
               href={item.link}
-              target={item.link.startsWith('http') ? '_blank' : undefined}
-              rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block no-underline"
               title=""
             >

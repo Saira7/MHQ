@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa6";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "447XXXXXXXXX"; // 👉 replace with your WhatsApp number (no +, no spaces)
+  const phoneNumber = "447307397818"; // 👉 replace with your WhatsApp number (no +, no spaces)
   const message = "Hello! I would like to know more about your services.";
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
