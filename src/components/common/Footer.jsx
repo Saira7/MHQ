@@ -89,8 +89,20 @@ const Footer = () => {
         {/* Contact & Social */}
         <div>
           <h4 className="font-semibold mb-4 text-lg">Get In Touch</h4>
-          <p className="text-gray-200 mb-2">info@mhquk.com</p>
-          <p className="text-gray-200 mb-4">+44 000 000 0000</p>
+          <a 
+  href="mailto:info@mhqukconsultants.com?subject=Inquiry%20from%20Website"
+  className="text-gray-200 mb-2 block hover:text-blue-300 transition-colors"
+>
+  info@mhqukconsultants.com
+</a>
+          <a 
+  href="https://wa.me/447307397818"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-gray-200 mb-4 block hover:text-blue-300 transition-colors"
+>
+  +44 7307 397818
+</a>
           <div className="flex gap-4 mt-2">
             <a
               href="#"
