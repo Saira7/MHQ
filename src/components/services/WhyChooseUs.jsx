@@ -1,36 +1,44 @@
 // src/components/services/WhyChooseUs.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { 
+  CreditCard, 
+  ShieldCheck, 
+  Headphones,
+  TrendingUp,
+  Percent,
+  Handshake 
+} from "lucide-react";
 import FeatureCard from "./FeatureCard";
 
 const featureData = [
   {
-    icon: "💳",
+    icon: CreditCard,
     title: "Fast Merchant Onboarding",
     desc: "Get verified and approved swiftly with streamlined onboarding for top payment providers."
   },
   {
-    icon: "🔒",
+    icon: ShieldCheck,
     title: "Secure Payment Solutions",
     desc: "PCI‑compliant, fraud‑resistant, industry‑approved payment systems for complete peace of mind."
   },
   {
-    icon: "📞",
+    icon: Headphones,
     title: "Dedicated UK Support",
     desc: "Personalised guidance for setup, compliance and integration from expert consultants."
   },
   {
-    icon: "⚡",
+    icon: TrendingUp,
     title: "High Approval Rates",
     desc: "We specialise in startups, SMEs, and high‑risk industries — boosting merchant account approval success."
   },
   {
-    icon: "📈",
+    icon: Percent,
     title: "Optimised Processing Fees",
     desc: "Transparent fee structures and negotiable rates designed for long‑term business growth."
   },
   {
-    icon: "🤝",
+    icon: Handshake,
     title: "Trusted Industry Partners",
     desc: "We partner with leading UK & international payment processors — scalable, reliable solutions."
   },

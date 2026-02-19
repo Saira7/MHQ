@@ -1,28 +1,34 @@
 // components/about/CoreValues.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { 
+  Target, 
+  Scale, 
+  Rocket, 
+  Lightbulb 
+} from "lucide-react";
 
 const values = [
   {
-    icon: "🎯",
+    icon: Target,
     title: "Client-Centric",
-    desc: "We prioritize our clients’ growth, tailoring every strategy to meet their unique goals.",
+    desc: "We prioritize our clients' growth, tailoring every strategy to meet their unique goals.",
     variant: "blue",
   },
   {
-    icon: "⚖️",
+    icon: Scale,
     title: "Integrity & Compliance",
     desc: "Every service we provide is aligned with UK standards, ensuring transparency and trust.",
     variant: "white",
   },
   {
-    icon: "🚀",
+    icon: Rocket,
     title: "Growth-Focused",
     desc: "We help businesses scale quickly with structured planning and forward-thinking solutions.",
     variant: "blue",
   },
   {
-    icon: "💡",
+    icon: Lightbulb,
     title: "Innovative Solutions",
     desc: "We combine creativity, technology, and expertise to solve complex business challenges.",
     variant: "white",
@@ -50,6 +56,7 @@ const CoreValues = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {values.map((value, i) => {
           const isBlue = value.variant === "blue";
+          const Icon = value.icon;
 
           return (
             <motion.div
@@ -62,54 +69,51 @@ const CoreValues = () => {
             >
               {/* Floating Icon */}
               <motion.div
-                className={`w-24 h-24 rounded-full flex items-center justify-center text-4xl mx-auto
+                className={`w-24 h-24 rounded-full flex items-center justify-center mx-auto
                   absolute -top-12 left-1/2 -translate-x-1/2 z-20 shadow-xl
-                  ${isBlue ? "bg-blue-500" : "bg-white text-blue-900"}
+                  ${isBlue ? "bg-blue-500 text-white" : "bg-white text-blue-900"}
                 `}
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                {value.icon}
+                <Icon className="w-10 h-10" />
               </motion.div>
 
               {/* Card */}
-<div
-  className="relative bg-blue-900 rounded-2xl overflow-hidden shadow-2xl pt-16 pb-10 px-8 border border-white/10"
->
-  {/* Black Overlay */}
-  <div className="absolute inset-0 bg-black/50"></div>
+              <div
+                className="relative bg-blue-900 rounded-2xl overflow-hidden shadow-2xl pt-16 pb-10 px-8 border border-white/10"
+              >
+                {/* Black Overlay */}
+                <div className="absolute inset-0 bg-black/50"></div>
 
-  {/* Content */}
-  <div className="relative z-10 text-center flex flex-col items-center">
-    <h3 className="text-xl font-semibold mb-2 text-white">
-      {value.title}
-    </h3>
-    <p className="text-gray-300 text-sm leading-relaxed mb-6">
-      {value.desc}
-    </p>
+                {/* Content */}
+                <div className="relative z-10 text-center flex flex-col items-center">
+                  <h3 className="text-xl font-semibold mb-2 text-white">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    {value.desc}
+                  </p>
 
-    {/* Blended Button */}
-    <button
-      className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300
-        ${isBlue
-          ? "bg-blue-700 text-white hover:bg-blue-600/80 shadow-md"
-          : "bg-white/20 text-white hover:bg-white/30 shadow-md"
-        }`}
-    >
-      Learn More
-    </button>
-  </div>
+                  {/* Blended Button */}
+                  <button
+                    className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300
+                      ${isBlue
+                        ? "bg-blue-700 text-white hover:bg-blue-600/80 shadow-md"
+                        : "bg-white/20 text-white hover:bg-white/30 shadow-md"
+                      }`}
+                  >
+                    Learn More
+                  </button>
+                </div>
 
-  {/* Bottom Wave Gradient */}
-  <div
-    className={`absolute bottom-0 left-0 w-full h-24
-      ${isBlue ? "bg-gradient-to-t from-blue-500/60 to-transparent" 
-               : "bg-gradient-to-t from-white/40 to-transparent"}`}
-  ></div>
-</div>
-
-
-
+                {/* Bottom Wave Gradient */}
+                <div
+                  className={`absolute bottom-0 left-0 w-full h-24
+                    ${isBlue ? "bg-gradient-to-t from-blue-500/60 to-transparent" 
+                             : "bg-gradient-to-t from-white/40 to-transparent"}`}
+                ></div>
+              </div>
             </motion.div>
           );
         })}

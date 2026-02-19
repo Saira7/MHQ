@@ -204,9 +204,7 @@ const BlogPage = () => {
 
   <div className="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
     <div className="relative flex-1 w-full">
-      <span className="absolute inset-y-0 left-3 flex items-center text-blue-400">
-        📧
-      </span>
+      
       <input
         type="email"
         placeholder="Enter your email"
